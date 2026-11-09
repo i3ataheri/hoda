@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إهداء خاص | الأستاذة هدى</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Arabic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royalNavy: '#0A1128',
+                        deepNavy: '#1C2541',
+                        accentBlue: '#00B4D8',
+                        goldMain: '#D4AF37',
+                        goldBright: '#F9E076',
+                        goldDark: '#AA771C'
+                    },
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                        cairo: ['Cairo', 'sans-serif'],
+                        ruqaa: ['Aref Ruqaa', 'serif'],
+                        amiri: ['Amiri', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scrolling & Hardware Acceleration */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #060B19;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(0, 180, 216, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(28, 37, 65, 0.4) 0%, transparent 70%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #ffffff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Particle Stars Canvas */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            transform: translateZ(0);
+        }
+
+        /* Luxury Glassmorphism Container */
+        .glass-card-luxury {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.7),
+                inset 0 1px 1px rgba(255, 255, 255, 0.15),
+                inset 0 -1px 20px rgba(212, 175, 55, 0.15);
+            will-change: transform;
+            transform: translateZ(0);
+        }
+
+        /* Gold Shimmer Typography */
+        .gold-shimmer {
+            background: linear-gradient(120deg, #D4AF37 0%, #FFF3B0 25%, #AA771C 50%, #F9E076 75%, #D4AF37 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        /* Shimmer Border for Frame */
+        .gold-border-glow {
+            position: relative;
+        }
+        .gold-border-glow::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #D4AF37, transparent, #00B4D8, transparent, #D4AF37);
+            border-radius: 1.5rem;
+            z-index: -1;
+            opacity: 0.6;
+            animation: borderRotate 6s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        /* Floating Animation */
+        .animate-float-slow {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(2deg); }
+        }
+
+        /* Entrance Animations */
+        .fade-in-up {
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.97);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* 3D Button Effects */
+        .btn-3d {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-3d:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        /* Pulse Glowing Aura */
+        .pulse-aura {
+            animation: pulseAura 3s infinite ease-in-out;
+        }
+        @keyframes pulseAura {
+            0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3), 0 0 30px rgba(0, 180, 216, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 0 0 50px rgba(0, 180, 216, 0.4); }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 sm:p-8 relative">
+
+    <!-- Canvas for Floating Sparkles / Particles Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Background Ornaments -->
+    <div class="fixed top-10 right-10 text-goldMain/20 text-7xl select-none animate-float-slow pointer-events-none font-ruqaa">✦</div>
+    <div class="fixed bottom-12 left-10 text-accentBlue/20 text-8xl select-none animate-float-slow pointer-events-none font-ruqaa" style="animation-delay: 2s;">✿</div>
+
+    <!-- Main Card Container -->
+    <main class="w-full max-w-2xl glass-card-luxury rounded-3xl p-6 sm:p-12 text-center relative z-10 fade-in-up my-auto border border-goldMain/30">
+
+        <!-- Top Emblem Motif Symbol (Golden Heart) -->
+        <div class="mb-6 flex justify-center">
+            <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-goldMain/20 via-accentBlue/20 to-transparent flex items-center justify-center border border-goldMain/40 pulse-aura">
+                <i class="fa-solid fa-heart text-2xl text-goldBright animate-pulse"></i>
+            </div>
+        </div>
+
+        <!-- Header: Receiver Name -->
+        <header class="mb-10">
+            <h1 class="text-2xl sm:text-3xl font-light text-slate-200 mb-2">إلى الأستاذة الفاضلة القديرة</h1>
+            
+            <div class="py-2">
+                <span class="font-ruqaa text-5xl sm:text-7xl gold-shimmer block leading-tight drop-shadow-lg">
+                    الأستاذة هدى
+                </span>
+            </div>
+
+            <!-- Quranic Teacher Specialty Badge -->
+            <div class="mt-4 flex flex-wrap justify-center items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-goldMain/15 border border-goldMain/30 text-goldBright text-xs sm:text-sm font-semibold">
+                    <i class="fa-solid fa-mosque text-accentBlue ml-1"></i> أستاذة الحفظ والتجويد بحلقات المسجد النبوي الشريف
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center gap-3 mt-3">
+                <span class="h-px w-16 bg-gradient-to-l from-goldMain to-transparent"></span>
+                <span class="text-goldBright text-sm">❖ 🕌 ❖</span>
+                <span class="h-px w-16 bg-gradient-to-r from-goldMain to-transparent"></span>
+            </div>
+        </header>
+
+        <!-- Professional Teacher Profile Badge Section (المسجد النبوي واللحن والتجويد) -->
+        <section class="mb-8">
+            <div class="bg-gradient-to-b from-royalNavy/90 via-slate-900/90 to-royalNavy/90 border border-goldMain/30 rounded-2xl p-5 sm:p-6 text-center shadow-xl relative overflow-hidden">
+                <div class="absolute -right-6 -top-6 text-goldMain/10 text-8xl font-amiri pointer-events-none select-none">🕌</div>
+
+                <h2 class="text-xs font-bold uppercase tracking-widest text-accentBlue mb-3">
+                    ✦ الصفة والتخصص الإيماني ✦
+                </h2>
+
+                <p class="font-amiri text-lg sm:text-xl text-goldBright leading-relaxed font-bold mb-4">
+                    أستاذة الحفظ والتجويد بحلقات المسجد النبوي الشريف
+                </p>
+
+                <!-- Expertise Tags -->
+                <div class="flex flex-wrap justify-center gap-2">
+                    <span class="bg-goldMain/10 border border-goldMain/30 text-slate-200 text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 font-medium">
+                        <i class="fa-solid fa-book-quran text-goldBright"></i> متخصصة في علم التجويد
+                    </span>
+                    <span class="bg-accentBlue/10 border border-accentBlue/30 text-slate-200 text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 font-medium">
+                        <i class="fa-solid fa-feather-pointed text-accentBlue"></i> ضبط اللحن الجليّ والفيّ
+                    </span>
+                    <span class="bg-emerald-500/10 border border-emerald-500/30 text-slate-200 text-xs px-3 py-1.5 rounded-lg flex items-center gap-1.5 font-medium">
+                        <i class="fa-solid fa-hands-holding-circle text-emerald-400"></i> إتقان الأداء والتلاوة
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appreciation & Gratitude Card -->
+        <section class="mb-8 text-right">
+            <div class="gold-border-glow bg-gradient-to-b from-royalNavy/90 to-deepNavy/90 rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-2xl">
+                
+                <div class="flex items-center gap-3 mb-4 border-b border-goldMain/20 pb-3">
+                    <i class="fa-solid fa-hands-praying text-goldBright text-xl"></i>
+                    <h3 class="font-cairo font-bold text-goldMain text-base sm:text-lg">رسالة شكر وتقدير</h3>
+                </div>
+
+                <!-- Literary Text -->
+                <p class="font-amiri text-xl sm:text-2xl leading-relaxed text-slate-100 text-center sm:text-right font-medium mb-6">
+                    "طوبى لمن جعلت كتابَ اللهِ منهجاً ودرباً، وعلَّمت حروفه وأحكامه في ورحابِ مسجدِ رسول الله ﷺ. شكراً لكِ أستاذتنا القديرة على دقّة توجيهكِ، وصبركِ العظيم، وحرصكِ الصادق على تقويم تلاوتنا وصون حروف كتاب الله."
+                </p>
+
+                <div class="bg-black/30 rounded-xl p-4 border border-white/10 text-center sm:text-right flex items-center gap-3">
+                    <div class="w-2 h-10 bg-accentBlue rounded-full hidden sm:block"></div>
+                    <p class="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
+                        كتب الله أجر كل حرفٍ علّمتِه، ورفع قدركِ في عليّين، وجعلكِ ممّن يقال لهم يوم القيامة: «اقرَأْ وَارْتَقِ وَرَتِّلْ».
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sender Gift Card Section -->
+        <section class="mb-8">
+            <div class="bg-gradient-to-r from-accentBlue/10 via-slate-800/40 to-accentBlue/10 border border-accentBlue/30 rounded-2xl p-6 relative backdrop-blur-md">
+                
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4 text-right">
+                        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-goldMain to-amber-600 flex items-center justify-center text-royalNavy text-xl shadow-lg shrink-0">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs text-accentBlue block font-medium">بطاقة إهداء مفعمة بالحب والوفاء:</span>
+                            <h3 class="font-cairo font-bold text-lg sm:text-xl text-white">من طالبتكِ المحبة والممتنة</h3>
+                        </div>
+                    </div>
+
+                    <div class="bg-goldMain/10 border border-goldMain/40 px-5 py-2.5 rounded-xl">
+                        <span class="font-ruqaa text-2xl text-goldBright block">مريم البلوشي</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="space-y-4">
+            <h3 class="text-xs font-semibold text-gray-400 mb-4 tracking-widest uppercase">
+                ✦ التواصل مع الأستاذة ✦
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 relative">
+                <!-- WhatsApp Saudi Link -->
+                <a href="https://wa.me/966565502536" target="_blank" rel="noopener noreferrer" 
+                   class="btn-3d flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-cairo font-bold py-4 px-6 rounded-2xl shadow-lg shadow-emerald-900/30 border border-emerald-400/30 group">
+                    <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm">التواصل عبر واتساب</span>
+                </a>
+
+                <!-- Snapchat with Custom Tooltip Notification -->
+                <div class="relative group/snap font-cairo">
+                    <button onclick="showSnapTooltip(event)" 
+                       class="w-full btn-3d flex items-center justify-center gap-3 bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-slate-950 font-extrabold py-4 px-6 rounded-2xl shadow-lg shadow-amber-500/20 border border-yellow-200/40 group">
+                        <i class="fa-brands fa-snapchat text-2xl group-hover:scale-110 transition-transform"></i>
+                        <span class="text-sm">التواصل عبر سناب شات</span>
+                    </button>
+
+                    <!-- Tooltip Box -->
+                    <div id="snapTooltip" class="absolute -top-12 left-1/2 -translate-x-1/2 bg-black/90 text-goldBright text-xs font-bold px-4 py-2 rounded-xl border border-goldMain/40 shadow-xl opacity-0 pointer-events-none transition-all duration-300 whitespace-nowrap z-30 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-info text-accentBlue"></i>
+                        <span>الحساب لم يُفعّل بعد</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Blessing Trigger -->
+        <div class="mt-10 pt-6 border-t border-white/10">
+            <button onclick="openModal()" class="group relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-medium rounded-full bg-gradient-to-br from-goldMain via-accentBlue to-deepNavy group-hover:from-goldMain group-hover:to-accentBlue text-white focus:outline-none">
+                <span class="relative px-6 py-2.5 transition-all ease-in duration-75 bg-royalNavy rounded-full group-hover:bg-opacity-0 flex items-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles text-goldBright"></i>
+                    <span>اضغطي لقراءة دعاء طالبتكِ لكِ</span>
+                </span>
+            </button>
+        </div>
+
+        <!-- Footer / End Note inside container or right after -->
+        <footer class="mt-10 pt-6 border-t border-white/10 text-center text-xs text-gray-400">
+            <p class="font-cairo tracking-wide">مصمم بكل حب وإتقان لـ <span class="text-goldBright font-semibold">الأستاذة هدى</span> 🌸</p>
+        </footer>
+
+    </main>
+
+    <!-- Custom Animated Modal (No Browser Alerts) -->
+    <div id="blessingModal" class="fixed inset-0 bg-black/75 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div id="modalBox" class="glass-card-luxury border-2 border-goldMain rounded-3xl p-6 sm:p-10 max-w-md w-full text-center transform scale-90 transition-all duration-300 relative">
+            
+            <button onclick="closeModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="w-16 h-16 bg-goldMain/20 rounded-full flex items-center justify-center mx-auto mb-4 border border-goldMain/50 text-3xl text-goldBright">
+                🤲
+            </div>
+
+            <h3 class="font-cairo font-bold text-xl text-goldBright mb-3">دعاء صادق للأستاذة الفاضلة</h3>
+
+            <p class="font-amiri text-lg text-slate-100 leading-loose mb-6 bg-white/5 p-4 rounded-xl border border-white/10">
+                "اللهمَّ أسعد قلبَكِ، ونوّر دربَكِ، واجعل القرآنَ العظيم ربيعَ قلبكِ، ونورَ صدركِ، وجلاءَ حزنكِ، وذهابَ همّكِ، واجمعنا بكِ في الفردوس الأعلى من الجنة."
+            </p>
+
+            <button onclick="closeModal()" class="w-full bg-gradient-to-r from-goldMain to-amber-600 hover:from-goldBright hover:to-goldMain text-royalNavy font-cairo font-bold py-3 rounded-xl shadow-lg transition-all">
+                آمين يا رب العالمين
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactive Features & Particles Canvas -->
+    <script>
+        // Snapchat Tooltip Trigger
+        let snapTooltipTimer;
+        function showSnapTooltip(e) {
+            e.preventDefault();
+            const tooltip = document.getElementById('snapTooltip');
+            tooltip.classList.remove('opacity-0', 'pointer-events-none');
+            tooltip.classList.add('opacity-100');
+
+            clearTimeout(snapTooltipTimer);
+            snapTooltipTimer = setTimeout(() => {
+                tooltip.classList.remove('opacity-100');
+                tooltip.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+
+        // Modal Control Functions
+        function openModal() {
+            const modal = document.getElementById('blessingModal');
+            const modalBox = document.getElementById('modalBox');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalBox.classList.remove('scale-90');
+            modalBox.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('blessingModal');
+            const modalBox = document.getElementById('modalBox');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalBox.classList.remove('scale-100');
+            modalBox.classList.add('scale-90');
+        }
+
+        // Lightweight Optimized Particle Canvas Logic
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedY = Math.random() * 0.3 - 0.15;
+                this.speedX = Math.random() * 0.3 - 0.15;
+                this.opacity = Math.random() * 0.5 + 0.2;
+                this.fadeSpeed = Math.random() * 0.005 + 0.002;
+                this.color = Math.random() > 0.5 ? '#D4AF37' : '#00B4D8';
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.opacity += this.fadeSpeed;
+
+                if (this.opacity >= 0.7 || this.opacity <= 0.1) {
+                    this.fadeSpeed = -this.fadeSpeed;
+                }
+
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = Math.max(0, this.opacity);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 18000), 50);
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.onload = function() {
+            initParticles();
+            animateParticles();
+        };
+    </script>
+</body>
+</html>
